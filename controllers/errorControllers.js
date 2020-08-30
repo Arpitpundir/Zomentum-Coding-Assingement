@@ -2,8 +2,8 @@ const AppError = require("./../utils/appError");
 const devModeErrorResponse = (req, res, err) => {
     //function which would handle the errors when we are running in devlopment mode
     console.log("Error", err);
-    return res.status(500).json({
-        title: "Something went very wrong",
+    return res.status(200).json({
+        status: "failed",
         msg: err.message
     });
 }

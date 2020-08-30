@@ -1,0 +1,46 @@
+.FormCont{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  //flex-flow: wrap row;
+  align-items: center;
+
+  &__form{
+    margin: 10px;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 3px 6px 3px rgba(2, 2, 2, 0.11);
+    background-color: #ffffff;
+    height: 90%;
+    //align-content: center;
+    align-items: center;
+
+    & div{
+      margin-bottom: 10px;
+    }
+    &:first-child{
+      margin-top: 2rem;
+    }
+    &__button{
+      text-align: center;
+    }
+    &_button_wrapper{
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    &_input_wrapper{
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &_button_wrapper{
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+

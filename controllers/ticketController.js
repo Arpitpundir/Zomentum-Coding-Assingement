@@ -18,7 +18,7 @@ exports.deleteTicket = async (req, res, next) => {
 
 exports.updateTicket = catchAsync(async (req, res, next) => {
     //console.log("update")
-        const doc = await Ticket.findByIdAndUpdate(req.params.id, {timing: req.body.timing}, {
+        const doc = await Ticket.findByIdAndUpdate(req.params.id, {timing: req.body.timing, date: req.body.date}, {
             new: true,
             runValidators: true
         });
@@ -29,9 +29,7 @@ exports.updateTicket = catchAsync(async (req, res, next) => {
 
         res.status(200).json({
             status: 'success',
-            data: {
-                data: doc
-            }
+            docs: doc
         });
     });
 
@@ -49,14 +47,12 @@ exports.getOneTicket = async (req, res, next) => {
         if(doc.valid=="false"||isValid(doc)){
             res.status(200).json({
                 status: 'success',
-                data: {
-                    data: doc
-                }
+                docs: doc
             });
         }else{
             setInvalid(doc);
             res.status(200).json({
-                status: 'success',
+                status: 'failed',
                 msg: "Sorry no such valid tickets."
             });
         }
@@ -86,11 +82,9 @@ exports.getTicket = async (req, res, next) => {
                 return false;
             }
         })
-        res.status(500).json({
+        res.status(200).json({
             status: 'success',
-            data: {
-                data: validTickets
-            }
+            docs: validTickets
         });
     }catch(err){
         console.log("catched")
@@ -113,9 +107,7 @@ exports.createTicket = async (req, res, next) => {
             const newTicket=await Ticket.create(req.body);
             res.status(201).json({
                 status: 'success',
-                data: {
-                    data: newTicket
-                }
+                docs: newTicket
             });
         }
     }catch(error){
@@ -125,11 +117,21 @@ exports.createTicket = async (req, res, next) => {
 
 const isValid = (ticket)=>{
     const currDate=new Date();
-    const ticketDate=new Date(ticket.date);
-
-    if(currDate.getMonth()<=ticketDate.getMonth()&&
-    currDate.getDay()<=ticketDate.getDay()&&
-    currDate.getFullYear()<=ticketDate.getFullYear()&&
+    const from=ticket.date.split("-")
+    const ticketDate=new Date(from[2], from[1]-1, from[0]);
+    console.log(currDate.getFullYear(), ticketDate.getFullYear())
+    console.log(currDate.getMonth(), ticketDate.getMonth())
+    console.log(currDate.getDay(), ticketDate.getDay())
+    console.log(currDate.getHours(), ticket.timing)
+    if(currDate.getFullYear()<ticketDate.getFullYear()){
+        return true
+    }else if(currDate.getMonth()<ticketDate.getMonth()){
+        return true
+    }else if(currDate.getDay()<ticketDate.getDay()){
+        return true
+    }else if(currDate.getMonth()==ticketDate.getMonth()&&
+    currDate.getDay()==ticketDate.getDay()&&
+    currDate.getFullYear()==ticketDate.getFullYear()&&
     currDate.getHours()-ticket.timing<=8){
         return true;
     }else{
