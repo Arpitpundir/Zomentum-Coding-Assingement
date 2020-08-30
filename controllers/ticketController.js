@@ -119,10 +119,6 @@ const isValid = (ticket)=>{
     const currDate=new Date();
     const from=ticket.date.split("-")
     const ticketDate=new Date(from[2], from[1]-1, from[0]);
-    console.log(currDate.getFullYear(), ticketDate.getFullYear())
-    console.log(currDate.getMonth(), ticketDate.getMonth())
-    console.log(currDate.getDay(), ticketDate.getDay())
-    console.log(currDate.getHours(), ticket.timing)
     if(currDate.getFullYear()<ticketDate.getFullYear()){
         return true
     }else if(currDate.getMonth()<ticketDate.getMonth()){
