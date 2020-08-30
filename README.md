@@ -1,5 +1,7 @@
 # Zomentum-Coding-Assingement
 This is a MERN stack web app where client side uses React and server is using Node.js and MongoDB is used as a database.
+![ScreenShot](https://github.com/Arpitpundir/Zomentum-Coding-Assingement/blob/master/Test-Screenshots/HomePage.png)
+Test Live Project at: https://damp-plateau-55610.herokuapp.com/
 There were total 8 tasks given, these tasks can be completed in 5 end points and two other important intermediate functions. Lets go through them one by one 
 ## Create A Ticket
 This Endpoint is used to book a new ticket.
@@ -8,7 +10,7 @@ You can test this endpoint by taking any example but the date should be in forma
 ### Postman Request
 ![ScreenShot](https://github.com/Arpitpundir/Zomentum-Coding-Assingement/blob/master/Test-Screenshots/CreateTicket/postmanReq.png)
 ### Postman Response
-![ScreenShot](https://github.com/Arpitpundir/Zomentum-Coding-Assingement/blob/master/Test-Screenshots/CreateTicket/postmanRes.png)
+![ScreenShot](https://github.com/Arpitpundir/Zomentum-Coding-Assingement/blob/master/Test-Screenshots/CreateTicket/pstmanRes.png)
 ### Heroku App Request
 ![ScreenShot](https://github.com/Arpitpundir/Zomentum-Coding-Assingement/blob/master/Test-Screenshots/CreateTicket/appReq.png)
 ### Heroku App Response
