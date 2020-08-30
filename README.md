@@ -2,7 +2,7 @@
 This is a MERN stack web app where client side uses React and server is using Node.js and MongoDB is used as a database.
 ![ScreenShot](https://github.com/Arpitpundir/Zomentum-Coding-Assingement/blob/master/Test-Screenshots/HomePage.png)
 Test Live Project at: https://damp-plateau-55610.herokuapp.com/
-There were total 8 tasks given, these tasks can be completed in 5 end points and two other important intermediate functions. Lets go through them one by one 
+There were total 7 tasks given, these tasks can be completed in 5 end points and two other important intermediate functions. Lets go through them one by one 
 ## Create A Ticket
 This Endpoint is used to book a new ticket.
 It takes four field as input (name, phone no, date and show timing) there are four show timings.
