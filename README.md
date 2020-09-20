@@ -1,4 +1,4 @@
-# Zomentum-Coding-Assingement
+# Book Your Ticket hassle Free
 This is a MERN stack web app where client side uses React and server is using Node.js and MongoDB is used as a database.
 ![ScreenShot](https://github.com/Arpitpundir/Zomentum-Coding-Assingement/blob/master/Test-Screenshots/HomePage.png)
 Test Live Project at: https://damp-plateau-55610.herokuapp.com/
