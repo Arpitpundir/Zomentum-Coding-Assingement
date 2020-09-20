@@ -6,10 +6,10 @@ class Header extends Component{
     return(
       <div className={styles.Header}>
         <div className={styles.Header_topic}>
-          Zomentum Coding Assingement-2
+          Book Your Ticket Hassle Free
         </div>
         <div className={styles.Header_intro}>
-          Arpit Pundir 17103046 JIIT
+          Your Feedback Matters.
         </div>
       </div>
     );
